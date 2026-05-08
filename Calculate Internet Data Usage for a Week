@@ -1,0 +1,40 @@
+Your task is to:
+Calculate the total data usage for the week Calculate the average daily usage Count the number of days where usage exceeded the average
+Finally, print:
+Total usage Average usage (integer division) Number of days with usage greater than average
+Input Format
+A single line containing 7 space-separated integers representing data usage (in MB) for each day
+Constraints
+0 ≤ usage ≤ 10^4 Exactly 7 integers will be provided Output average should be integer division
+Output Format
+Print three values separated by space:
+total_usage average_usage count_above_average
+Sample Input 0
+100 200 300 400 500 600 700
+Sample Output 0
+2800 400 3
+Sample Input 1
+10 20 30 40 50 60 70
+Sample Output 1
+280 40 3
+
+//code
+#include<stdio.h>
+int main(){
+int arr[7];
+int total =0;
+for(int i=0;i<7;i++){
+    scanf("%d",&arr[i]);
+   total +=arr[i];
+}
+int avg=total/7;
+int count =0;
+for(int i=0;i<7;i++){
+    if(arr[i]>avg){
+        count++;
+    }
+}
+printf("%d %d %d",total ,avg ,count);
+return 0;
+}
+
