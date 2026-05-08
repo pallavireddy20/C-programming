@@ -1,0 +1,53 @@
+you are given a positive integer N.
+Your task is to:
+Extract the digits of the number Calculate: Sum of digits at even positions Sum of digits at odd positions Positions are counted from right to left, starting at position 1
+Finally, print the absolute difference between the two sums.
+Input Format
+A single integer N
+Constraints
+1 ≤ N ≤ 10^18 Input will always be a non-negative integer
+Output Format
+Print a single integer representing: |sum_even_positions - sum_odd_positions|
+Sample Input 0
+12345
+Sample Output 0
+3
+Sample Input 1
+111111
+Sample Output 1
+0
+
+//code
+#include<stdio.h>
+#include<stdlib.h>
+
+int main() {
+
+    long long int n;
+    scanf("%lld", &n);
+
+    int pos = 1;
+    int osum = 0;
+    int esum = 0;
+
+    while(n > 0) {
+
+        int dig = n % 10;
+
+        if(pos % 2 == 0) {
+            esum += dig;
+        }
+        else {
+            osum += dig;
+        }
+
+        n /= 10;
+        pos++;
+    }
+
+    int res = abs(esum - osum);
+
+    printf("%d", res);
+
+    return 0;
+}
