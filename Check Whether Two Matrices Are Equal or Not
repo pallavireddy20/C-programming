@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main(){
+    int n,m;
+    scanf("%d %d",&n,&m);
+    int A[n][m],B[n][m];
+   // Input for first matrix A
+
+for(int i = 0; i < n; i++)
+{
+    for(int j = 0; j < m; j++)
+    {
+        scanf("%d", &A[i][j]);
+    }
+}
+for(int i = 0; i < n; i++)
+{
+    for(int j = 0; j < m; j++)
+    {
+        scanf("%d", &B[i][j]);
+    }
+}
+int flag=1;
+   for(int i=0;i<n;i++){
+       for(int j=0;j<n;j++){
+           if(A[i][j]!=B[i][j]){
+               flag=0;
+           }
+       }
+   } 
+   if(flag==1){
+       printf("Matrices are equal");
+   }
+   else{
+       printf("Matrices are not equal");
+   }
+    return 0;
+}
