@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d",&n);
+
+    int arr[n];
+
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+
+    int increasing=0;
+    int decreasing=0;
+    int peak=-1;
+
+    // increasing part find cheyyadam
+    for(int i=0;i<n-1;i++){
+        if(arr[i] < arr[i+1]){
+            increasing=1;
+        }
+        else{
+            peak=i;
+            break;
+        }
+    }
+
+    // decreasing part check
+    if(peak!=-1){
+        for(int i=peak;i<n-1;i++){
+            if(arr[i] > arr[i+1]){
+                decreasing=1;
+            }
+            else{
+                decreasing=0;
+                break;
+            }
+        }
+    }
+
+    if(increasing && decreasing){
+        printf("YES");
+    }
+    else{
+        printf("NO");
+    }
+
+    return 0;
+}
