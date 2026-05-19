@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int L,R,K;
+    scanf("%d %d %d",&L,&R,&K);
+    long long sum=0;
+    for(int i=L;i<R;i++){
+        if(i%K!=0){
+            sum+=i;
+        }
+    }
+    printf("%lld",sum);
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
