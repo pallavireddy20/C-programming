@@ -1,0 +1,84 @@
+You are given three integers t1, t2, and n.
+
+A modified Fibonacci sequence is defined as:
+
+t(n) = t(n-2) + (t(n-1))²
+
+Your task is to compute and print the nth term of this sequence.
+
+Input Format
+
+First line contains three space-separated integers:
+
+t1 t2 n
+Constraints
+
+0 ≤ t1, t2 ≤ 10 3 ≤ n ≤ 20
+
+Output Format
+
+Print a single integer representing the nth term of the sequence.
+
+Sample Input 0
+
+0 1 5
+Sample Output 0
+
+5
+Explanation 0
+
+t1 = 0 t2 = 1
+
+t3 = t1 + (t2)^2 = 0+1=1 t4 = t2 + (t3)^2 = 1 + 1 = 2
+t5 = t3 + (t4)^2 = 1 + 4= 5
+
+Sample Input 1
+
+2 3 7
+Sample Output 1
+
+56055246933386836
+Explanation 1
+
+t1 = 2
+t2 = 3
+
+t3 = t1 + (t2)^2 = 2 + 9 = 11
+t4 = t2 + (t3)^2 = 3 + 121 = 124
+t5 = t3 + (t4)^2 = 11 + 15376 = 15387
+t6 = t4 + (t5)^2 = 124 + 236759769 = 236759893
+t7 = t5 + (t6)^2
+
+
+
+//code
+#include <stdio.h>
+
+int main()
+{
+    unsigned long long t1,t2,t3;
+    int n;
+
+    scanf("%llu %llu %d",&t1,&t2,&n);
+
+    if(n==1){
+        printf("%llu",t1);
+        return 0;
+    }
+
+    if(n==2){
+        printf("%llu",t2);
+        return 0;
+    }
+
+    for(int i=3;i<=n;i++){
+        t3=t1+(t2*t2);
+
+        t1=t2;
+        t2=t3;
+    }
+
+    printf("%llu",t2);
+
+    return 0;
+}
