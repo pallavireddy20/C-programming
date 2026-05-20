@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+int isPrime(long long x) {
+    if (x < 2) return 0;
+    for (long long i = 2; i * i <= x; i++) {
+        if (x % i == 0) return 0;
+    }
+    return 1;
+}
+
+int main() {
+    long long n;
+    scanf("%lld", &n);
+
+    long long r = sqrt(n);
+
+    if (r * r == n && isPrime(r))
+        printf("1");
+    else
+        printf("0");
+
+    return 0;
+}
