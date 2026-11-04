@@ -1,0 +1,12 @@
+// Online C compiler (editor)
+// Write and run C online using this editor.
+
+#include <stdio.h>
+
+int main() {
+int a;
+    printf("enter a number: ");
+    scanf("%d",&a);
+    printf("%d",a);
+    return 0;
+}
