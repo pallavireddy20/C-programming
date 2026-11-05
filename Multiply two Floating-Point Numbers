@@ -1,0 +1,14 @@
+// Online C compiler (editor)
+// Write and run C online using this editor.
+
+#include <stdio.h>
+
+int main() {
+
+    float a,b;
+    a=2.12;
+    b=3.88;
+    float mul=a*b;
+    printf("%f",mul);
+    return 0;
+}
