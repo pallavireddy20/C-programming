@@ -1,0 +1,14 @@
+// Online C compiler (editor)
+// Write and run C online using this editor.
+
+#include <stdio.h>
+
+int main() {
+int principal,rate,time;
+    principal=1000;
+    rate=5;
+    time=2;
+    int SI=((principal*rate*time)/100);
+    printf("SI: %d",SI);
+    return 0;
+}
