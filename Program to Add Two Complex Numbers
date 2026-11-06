@@ -1,0 +1,17 @@
+// Online C compiler (editor)
+// Write and run C online using this editor.
+
+#include <stdio.h>
+
+int main() {
+int real1,real2,img1,img2;
+    int real,img;
+    printf("Enter the real and img numbers part1: ");
+    scanf("%d%d",&real1,&img1);
+    printf("enter the real and img numbers part2: ");
+    scanf("%d%d",&real2,&img2);
+    real=real1+real2;
+    img=img1+img2;
+    printf("%d+%di",real,img);
+    return 0;
+}
